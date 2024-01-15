@@ -1,7 +1,23 @@
 <template>
   <div class="home">
+    <div class="burger-menu">
+      <div class="burger-icon" @click="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="menu-links">
+        <!-- Your existing navigation links go here -->
+        <a href="#aboutme" style="color: #ff6e6c">About me</a>
+        <a href="#skills" style="color: #ff6e6c">Skills</a>
+        <a href="#mywork" style="color: #ff6e6c">My work</a>
+        <a href="#experience" style="color: #ff6e6c">Experience</a>
+        <a href="#contact" style="color: #ff6e6c">Contact</a>
+      </div>
+    </div>
+
     <div
-      class="z-50 h-[5vh] bg-opacity-20 bg-gradient sticky top-0 flex justify-end"
+      class="desktop-nav z-50 h-[5vh] bg-opacity-20 bg-gradient sticky top-0 flex justify-end"
     >
       <div id="nav" class="flex items-end gap-[3rem]">
         <a
@@ -92,8 +108,8 @@
           </div>
         </div>
 
-        <div class="flex justify-around">
-          <div class="flex gap-2 items-center">
+        <div class="flex flex-col items-center sm:flex-row sm:justify-around">
+          <div class="flex gap-4 items-center mb-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="40"
@@ -114,7 +130,7 @@
             >
           </div>
 
-          <div class="flex gap-2 items-center">
+          <div class="flex gap-2 items-center mb-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="40"
@@ -135,7 +151,7 @@
             >
           </div>
 
-          <div class="flex gap-2 items-center">
+          <div class="flex gap-2 items-center mb-4">
             <img
               class="icon w-[40px]"
               src="../assets/svg/codewars.svg"
@@ -152,8 +168,10 @@
       </section>
 
       <section id="skills" class="relative">
-        <h1 id="skills-header" class="heading text-7xl mt-[2rem]">Skills</h1>
-        <div id="skills-wrapper" class="flex justify-around gap-16 mt-[2rem]">
+        <h1 id="skills-header" class="heading text-7xl mt-[2rem] mb-4">
+          Skills
+        </h1>
+        <div id="skills-wrapper" class="flex flex-col gap-[2rem] sm:flex-row">
           <div
             id="technical-wrapper"
             class="bg-gradient w-[50%] p-4 text-center"
@@ -267,10 +285,9 @@
           </div>
           <div
             id="other-wrapper"
-            class="bg-gradient w-[50%] p-4 text-2xl flex flex-col justify-between space-x-16"
+            class="bg-gradient w-full sm:w-[48%] p-4 text-2xl flex flex-col justify-between mb-4"
           >
             <h1 class="text-4xl text-center">Other</h1>
-
             <p>Scrum</p>
             <p>Problem solving</p>
             <p>Patience</p>
@@ -279,11 +296,10 @@
             <p>Creativity</p>
           </div>
           <div
-            id="other-wrapper"
-            class="bg-gradient w-[50%] p-4 text-2xl flex flex-col justify-between space-x-16"
+            id="languages-wrapper"
+            class="bg-gradient w-full sm:w-[48%] p-4 text-2xl flex flex-col justify-between mb-4"
           >
             <h1 class="text-4xl text-center">Languages</h1>
-
             <p>French - C2</p>
             <p>English - C2</p>
             <p>Spanish - B2</p>
@@ -733,8 +749,10 @@
             If you are interested in working or connecting with me, please do
             not hesitate to contact me.
           </p>
-          <div class="flex justify-around my-[2rem]">
-            <div class="flex gap-2 items-center mt-[2rem]">
+          <div
+            class="flex flex-col gap-4 sm:flex-row sm:justify-around my-[2rem]"
+          >
+            <div class="flex gap-2 items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="40"
@@ -753,7 +771,7 @@
                 >E-mail</a
               >
             </div>
-            <div class="flex gap-2 items-center">
+            <div class="flex gap-2 items-center sm:mb-0">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="40"
@@ -799,6 +817,10 @@ export default {
       this.jaggaerIsOpen = false;
       this.vulkanIsOpen = false;
       this.ncrIsOpen = false;
+    },
+    toggleMenu() {
+      const menuLinks = document.querySelector(".menu-links");
+      menuLinks.classList.toggle("show-menu");
     },
   },
 };
@@ -895,6 +917,87 @@ section {
   #other-wrapper,
   .project-card-wrapper {
     width: 100%;
+  }
+}
+@media screen and (max-width: 800px) {
+  .flex-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .desktop-nav {
+    display: none;
+  }
+  .fadeInName {
+    margin-top: 0;
+    font-size: 3rem; /* Adjust the font size as needed */
+  }
+
+  .occu span {
+    font-size: 1.5rem; /* Adjust the font size as needed */
+  }
+}
+.burger-menu {
+  display: none;
+}
+
+.burger-icon {
+  cursor: pointer;
+  padding: 10px;
+}
+
+.burger-icon span {
+  display: block;
+  height: 3px;
+  width: 25px;
+  background-color: #ff6e6c;
+  margin: 5px 0;
+  transition: 0.4s;
+}
+
+.menu-links {
+  display: none; /* Initially hide the menu */
+}
+
+.menu-links.show-menu {
+  display: flex; /* Show the menu when the show-menu class is present */
+}
+
+.menu-links a:hover {
+  color: #ffffff;
+}
+@media screen and (max-width: 800px) {
+  .burger-menu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 10px;
+  }
+
+  .menu-links {
+    display: none;
+  }
+
+  .menu-links.show-menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px; /* Adjust this value as needed */
+    right: 10px;
+    background-color: #ffffff;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    z-index: 1;
+  }
+}
+@media screen and (min-width: 801px) {
+  .burger-menu {
+    display: none;
+  }
+
+  .menu-links {
+    display: flex;
   }
 }
 </style>

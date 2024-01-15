@@ -250,7 +250,7 @@ export default {
 .waviy span {
   display: inline-block;
   color: currentColor;
-  font-size: 4rem;
+  font-size: 3.5rem;
   text-transform: uppercase;
   animation: flip 2s infinite;
   animation-iteration-count: 1;
@@ -342,7 +342,7 @@ export default {
 
 @media screen and (max-width: 800px) {
   .fadeInName {
-    margin-top: 65%;
+    margin-top: 50%;
   }
 }
 </style>
