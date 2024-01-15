@@ -1,0 +1,19 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+* {
+  box-sizing: border-box;
+  font-family: "Nanum Gothic", sans-serif;
+}
+
+body {
+  background-color: #ffffff;
+  color: #1a2535;
+}
+
+@media screen and (max-width: 800px) {
+  html {
+    font-size: 10px;
+  }
+}
