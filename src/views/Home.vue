@@ -323,14 +323,14 @@
               />
 
               <p>
-                This website represents my cv and its purpose is to give the
-                visiter a quick description about me and what I do.
+                This website is like my digital resume – a quick peek into who I
+                am and what I'm all about.
               </p>
 
               <div class="flex justify-around">
-                <div class="">JavaScript</div>
-                <div class="">Vue</div>
-                <div class="">Tailwind</div>
+                <div class="mr-4">JavaScript</div>
+                <div class="mr-4">Vue</div>
+                <div class="mr-4">Tailwind</div>
               </div>
 
               <div class="flex gap-2 justify-center">
@@ -374,10 +374,10 @@
               </p>
 
               <div class="flex justify-around">
-                <div class="">JavaScript</div>
-                <div class="">React</div>
-                <div class="">Node.js</div>
-                <div class="">Knex</div>
+                <div class="mr-4">JavaScript</div>
+                <div class="mr-4">React</div>
+                <div class="mr-4">Node.js</div>
+                <div class="mr-4">Knex</div>
               </div>
             </div>
           </div>
@@ -402,10 +402,10 @@
                 only for mobile view.
               </p>
               <div class="flex justify-around">
-                <div class="">JavaScript</div>
-                <div class="">Vue</div>
-                <div class="">Node.js</div>
-                <div class="">Pinia</div>
+                <div class="mr-4">JavaScript</div>
+                <div class="mr-4">Vue</div>
+                <div class="mr-4">Node.js</div>
+                <div class="mr-4">Pinia</div>
               </div>
               <div class="flex justify-around">
                 <div class="flex gap-2">
@@ -471,10 +471,10 @@
               </p>
 
               <div class="flex justify-around flex-wrap">
-                <div class="">CSS</div>
-                <div class="">JavaScript</div>
-                <div class="">Vue</div>
-                <div class="">Node</div>
+                <div class="mr-4">CSS</div>
+                <div class="mr-4">JavaScript</div>
+                <div class="mr-4">Vue</div>
+                <div class="mr-4">Node</div>
               </div>
 
               <div class="flex gap-2 justify-center">
